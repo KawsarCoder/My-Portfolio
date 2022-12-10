@@ -1,7 +1,13 @@
 import React from "react";
+import Pdf from "react-to-pdf";
 import { Link } from "react-router-dom";
 
+const ref = React.createRef();
+
 const Navbar = () => {
+  const clickBtn = () => {
+    window.open("https://form.jotform.com/223434704837458");
+  };
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -89,14 +95,23 @@ const Navbar = () => {
               </ul>
             </li>
             <li>
-              <Link to="/">Contact me</Link>
+              <a href="/" onClick={clickBtn}>
+                Contact me
+              </a>
             </li>
           </ul>
         </div>
+        <div className="absolute mb-[1500px]" ref={ref}>
+          <img src="https://i.ibb.co/x1pC3j6/Resume.png" alt="" />
+        </div>
         <div className="navbar-end">
-          <Link to="/" className="btn">
-            Get Resume
-          </Link>
+          <Pdf targetRef={ref} filename="Kawsar-resume.pdf">
+            {({ toPdf }) => (
+              <Link to="/" className="btn" onClick={toPdf}>
+                Get Resume
+              </Link>
+            )}
+          </Pdf>
         </div>
       </div>
     </div>
