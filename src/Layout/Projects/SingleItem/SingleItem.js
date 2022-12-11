@@ -11,6 +11,11 @@ const SingleItem = () => {
     description,
     clientSide,
     serverSide,
+    buletOne,
+    buletTwo,
+    buletThree,
+    buletFour,
+    buletFive,
     liveSide,
   } = projectsDetails;
   return (
@@ -34,7 +39,11 @@ const SingleItem = () => {
       <div className="card bg-neutral text-neutral-content mb-10 lg:mx-20">
         <div className="card-body items-center text-center">
           <h2 className="card-title">{title}</h2>
-          <p>{description}</p>
+          <p className="text-xl">{buletOne}</p>
+          <p className="text-xl">{buletTwo}</p>
+          <p className="text-xl">{buletThree}</p>
+          <p className="text-xl">{buletFour}</p>
+          <p className="text-xl">{buletFive}</p>
           <div className="card-actions justify-end">
             <a href={clientSide} className="btn btn-info">
               Client side
